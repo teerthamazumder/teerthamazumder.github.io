@@ -280,7 +280,15 @@ export const techStackMarquee = {
 
 // Photo assets (all in /public/)
 export const photos = {
-  main: "/teertha.jpg",              // snowy St. John's — About section
-  headshot: "/teertha-headshot.jpg", // clean formal — OG image / meta
-  graduation: "/teertha-graduation.jpg", // MUN grad — Education section
+  main: "/teertha.jpg",
+  headshot: "/teertha-headshot.jpg",
+  graduation: "/teertha-graduation.jpg",
+  // Slideshow — About section
+  slideshow: [
+    "/teertha.jpg",
+    "/teertha-graduation.jpg",
+    "/Teertha_snow.jpg",
+    "/Teertha_formal.jpg",
+    "/Teertha_classic.jpg",
+  ],
 };

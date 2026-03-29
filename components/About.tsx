@@ -2,11 +2,11 @@
 
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
-import { motion, useInView, useSpring, useTransform } from "framer-motion";
-import { Mail, Github, Linkedin, Camera } from "lucide-react";
+import { motion, useInView, useSpring, useTransform, AnimatePresence } from "framer-motion";
+import { Mail, Github, Linkedin } from "lucide-react";
 import { personal, stats, photos } from "@/data/portfolio";
 
-const PHOTO_KEY = "portfolio_profile_photo";
+const SLIDE_INTERVAL = 12000; // 12 seconds
 
 function Counter({ value, suffix }: { value: number; suffix: string }) {
   const ref = useRef<HTMLSpanElement>(null);
@@ -38,34 +38,16 @@ interface AboutProps {
 export default function About({ id }: AboutProps) {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
-  const fileInputRef = useRef<HTMLInputElement>(null);
-  const [photoSrc, setPhotoSrc] = useState<string>(photos.main);
+  const [current, setCurrent] = useState(0);
+  const slideshow = photos.slideshow;
 
-  // Load saved photo from localStorage on mount
+  // Auto-advance every 12 s
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(PHOTO_KEY);
-      if (saved) setPhotoSrc(saved);
-    } catch {
-      // localStorage unavailable
-    }
-  }, []);
-
-  const handlePhotoChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      const result = ev.target?.result as string;
-      setPhotoSrc(result);
-      try {
-        localStorage.setItem(PHOTO_KEY, result);
-      } catch {
-        // storage quota exceeded
-      }
-    };
-    reader.readAsDataURL(file);
-  };
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % slideshow.length);
+    }, SLIDE_INTERVAL);
+    return () => clearInterval(timer);
+  }, [slideshow.length]);
 
   return (
     <section
@@ -74,15 +56,15 @@ export default function About({ id }: AboutProps) {
       className="scroll-mt-20 py-24 px-4 md:px-8 max-w-7xl mx-auto"
     >
       <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-        {/* Left — photo */}
+        {/* Left — slideshow */}
         <motion.div
           initial={{ opacity: 0, x: -60 }}
           animate={inView ? { opacity: 1, x: 0 } : {}}
           transition={{ duration: 0.7, ease: "easeOut" }}
           className="flex flex-col items-center gap-6"
         >
-          {/* Circular photo with gradient ring + upload overlay */}
-          <div className="relative group">
+          {/* Circular slideshow with gradient ring */}
+          <div className="relative">
             {/* Gradient ring */}
             <div
               className="absolute -inset-[3px] rounded-full"
@@ -95,50 +77,46 @@ export default function About({ id }: AboutProps) {
               className="relative w-56 h-56 md:w-72 md:h-72 rounded-full overflow-hidden"
               style={{ border: "3px solid #050505" }}
             >
-              {photoSrc.startsWith("data:") ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={photoSrc}
-                  alt={personal.name}
-                  className="w-full h-full object-cover"
-                />
-              ) : (
-                <Image
-                  src={photoSrc}
-                  alt={personal.name}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 768px) 224px, 288px"
-                  priority
-                />
-              )}
-
-              {/* Upload overlay — visible on hover */}
-              <button
-                onClick={() => fileInputRef.current?.click()}
-                aria-label="Change profile photo"
-                className="absolute inset-0 flex flex-col items-center justify-center gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 rounded-full"
-                style={{ background: "rgba(5,5,5,0.65)" }}
-              >
-                <Camera size={28} style={{ color: "var(--accent)" }} />
-                <span className="text-xs font-medium" style={{ color: "var(--accent)" }}>
-                  Change Photo
-                </span>
-              </button>
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={current}
+                  initial={{ opacity: 0, scale: 1.08 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.8, ease: "easeInOut" }}
+                  className="absolute inset-0"
+                >
+                  <Image
+                    src={slideshow[current]}
+                    alt={`${personal.name} — photo ${current + 1}`}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 768px) 224px, 288px"
+                    priority={current === 0}
+                  />
+                </motion.div>
+              </AnimatePresence>
             </div>
 
-            {/* Hidden file input */}
-            <input
-              ref={fileInputRef}
-              type="file"
-              accept="image/*"
-              className="hidden"
-              onChange={handlePhotoChange}
-            />
+            {/* Dot indicators */}
+            <div className="absolute -bottom-5 left-1/2 -translate-x-1/2 flex gap-1.5">
+              {slideshow.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  aria-label={`Go to photo ${i + 1}`}
+                  className="w-1.5 h-1.5 rounded-full transition-all duration-300"
+                  style={{
+                    background: i === current ? "var(--accent)" : "rgba(255,255,255,0.25)",
+                    transform: i === current ? "scale(1.4)" : "scale(1)",
+                  }}
+                />
+              ))}
+            </div>
           </div>
 
           {/* Social links */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-4 mt-4">
             <a
               href={`mailto:${personal.email}`}
               aria-label="Email"
@@ -168,9 +146,6 @@ export default function About({ id }: AboutProps) {
               <Linkedin size={16} />
             </a>
           </div>
-          <p className="text-xs" style={{ color: "var(--text-muted)" }}>
-            Hover the photo to change it
-          </p>
         </motion.div>
 
         {/* Right — bio + stats */}
