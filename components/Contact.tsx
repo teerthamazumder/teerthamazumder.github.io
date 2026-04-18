@@ -26,7 +26,7 @@ export default function Contact({ id }: ContactProps) {
     },
     {
       label: "GitHub",
-      value: "github.com/winl2",
+      value: "github.com/teerthamazumder",
       href: personal.github,
       icon: Github,
     },

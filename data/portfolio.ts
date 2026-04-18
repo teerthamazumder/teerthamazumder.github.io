@@ -9,11 +9,11 @@ export const personal = {
   tagline: "Bridging enterprise infrastructure with software engineering and AI-driven innovation.",
   availableForWork: true,
   email: "mteertha@gmail.com",
-  github: "https://github.com/winl2",
+  github: "https://github.com/teerthamazumder",
   linkedin: "https://www.linkedin.com/in/teertha-mazumder-51a656126/",
   location: "St. John's, NL, Canada",
   photo: "/teertha.jpg",
-  resume: "/teertha_resume_2026.pdf",
+  resume: "/Teertha_Mazumder_Resume.pdf",
   bio: "Senior Infrastructure and Security Analyst at the Government of Newfoundland and Labrador, with a Master of Applied Science in Software Engineering. I secure and modernize mission-critical government systems while building full-stack applications and AI-driven solutions — bridging enterprise infrastructure leadership with modern software engineering, automation, and LLM-based development.",
   typewriterRoles: [
     "Senior Infrastructure Analyst",
@@ -37,28 +37,37 @@ export const skillGroups = [
     category: "Systems & Infrastructure",
     skills: [
       "RHEL", "IBM AIX", "Windows Server", "VMware vSphere",
-      "IBM Power Systems", "HMC/LPAR", "Red Hat Satellite",
+      "IBM Power Systems", "HMC/LPAR", "Apache HTTPD", "Apache Tomcat",
+      "IBM Spectrum Protect", "Red Hat Satellite",
+    ],
+  },
+  {
+    category: "Microsoft Ecosystem",
+    skills: [
+      "Power BI", "DAX", "Microsoft Excel", "Microsoft 365",
+      "Azure App Services", "Power Platform", "Copilot Studio", "C#", ".NET",
     ],
   },
   {
     category: "Security & Identity",
     skills: [
       "Firewalls", "Network Segmentation", "RBAC", "Active Directory",
-      "Microsoft 365", "IAM", "Vulnerability Remediation", "CompTIA Security+",
+      "IAM", "OAuth", "JWT", "Vulnerability Remediation", "CompTIA Security+",
     ],
   },
   {
     category: "Programming",
     skills: [
       "Python", "JavaScript", "TypeScript", "PHP",
-      "Bash", "Node.js", "React", "Flutter",
+      "Bash", "Node.js", "React", "Next.js 14", "Flutter", "C#",
     ],
   },
   {
     category: "Data & Analytics",
     skills: [
-      "Power BI", "Tableau", "Pandas", "MySQL",
-      "PostgreSQL", "SQLite", "ETL Pipelines",
+      "Power BI", "Tableau", "Pandas", "NumPy", "Matplotlib",
+      "Oracle Database", "MySQL", "PostgreSQL", "SQLite", "Supabase",
+      "pgvector", "ETL Pipelines", "KPI Reporting",
     ],
   },
   {
@@ -66,13 +75,16 @@ export const skillGroups = [
     skills: [
       "Docker", "Kubernetes", "Ansible", "AWS",
       "Azure", "GCP", "Terraform", "CloudFormation",
+      "GitHub Actions CI/CD", "Secrets Management",
     ],
   },
   {
     category: "AI / ML",
     skills: [
-      "Scikit-learn", "TensorFlow", "PyTorch", "LLaMA",
-      "Hugging Face", "NLP", "Prompt Engineering", "Ollama", "LangChain",
+      "LangChain", "LangGraph", "Ollama", "LLaMA", "Claude API",
+      "Azure OpenAI", "Voyage AI", "RAG Pipelines", "Prompt Engineering",
+      "Tool Calling", "Agent Orchestration", "pgvector", "Embeddings",
+      "Scikit-learn", "TensorFlow", "PyTorch", "Hugging Face", "NLP",
     ],
   },
 ];
@@ -83,36 +95,41 @@ export const experience = [
     company: "Office of the Chief Information Officer (OCIO)",
     org: "Government of Newfoundland and Labrador",
     location: "St. John's, NL",
-    period: "July 2025 – Present",
-    current: true,
-    stack: ["RHEL", "IBM AIX", "VMware", "Firewalls", "Red Hat Satellite", "Oracle", "MySQL"],
+    period: "July 2025 – April 2026",
+    current: false,
+    stack: [
+      "RHEL", "IBM AIX", "VMware vSphere", "PeopleSoft HCM",
+      "Oracle Database", "MySQL", "Apache HTTPD", "IBM Spectrum Protect",
+      "Python", "Bash",
+    ],
     bullets: [
-      "Support and secure enterprise network and infrastructure delivering critical government services",
-      "Manage firewall policies, network access controls, routing, and segmentation",
-      "Administer and harden Linux (RHEL), IBM AIX, and Windows Server environments",
-      "Perform patch management, vulnerability remediation, and risk assessments",
-      "Support Microsoft 365 and Active Directory including IAM and RBAC validation",
-      "Contribute to incident response, disaster recovery testing, and business continuity planning",
+      "Provided technical analysis, systems support, and solution design for enterprise IT infrastructure serving government departments province-wide, supporting mission-critical applications including PeopleSoft HCM and Financial Management Systems on RHEL, IBM AIX, and VMware vSphere",
+      "Administered and optimized Oracle Database and MySQL environments, performing SQL query optimization, data integrity validation, performance tuning, and supporting analytical data flows for enterprise applications",
+      "Developed Python and Bash automation scripts for system monitoring, log-level analysis, statistical reporting, and alert delivery, building maintainable production pipelines with scheduled CI/CD-style execution",
+      "Supported enterprise system integrations between PeopleSoft HCM, government data systems, and external services, analyzing data flows, identifying mapping issues, and coordinating resolutions across teams",
+      "Administered Apache HTTPD, Apache Tomcat, IBM Spectrum Protect, and IBM Power Systems HMC and LPAR virtualized infrastructure, managing full server lifecycle including installation, patching, and decommissioning",
+      "Produced technical documentation, solution designs, configuration standards, and operational runbooks aligned with enterprise architecture, security, and change management standards",
+      "Collaborated with cross-functional teams and communicated complex technical findings clearly to both technical and non-technical stakeholders, maintaining a client-focused, service-oriented approach",
+      "Provided technical guidance, peer review, and knowledge transfer to colleagues, contributing to team capability and a culture of continuous improvement",
     ],
     modalBg: "linear-gradient(135deg, rgba(30,58,138,0.9) 0%, rgba(15,23,42,0.95) 60%, rgba(0,229,192,0.15) 100%)",
     modalAccent: "#3b82f6",
     orgUrl: "https://www.gov.nl.ca/",
-    extra: "", // add extra notes here in future
+    extra: "",
   },
   {
-    role: "Data Analyst / Systems Engineer (Contract)",
+    role: "Data Analyst and Systems Engineer",
     company: "PROSHIKA — A Center for Human Development",
     org: "",
     location: "Dhaka, Bangladesh",
     period: "2020 – 2023",
     current: false,
-    stack: ["Python", "SQL", "Power BI", "ETL", "Data Modeling"],
+    stack: ["Python", "SQL", "Power BI", "Tableau", "ETL", "Data Modeling"],
     bullets: [
-      "Designed and implemented secure data processing and reporting systems",
-      "Developed automated ETL pipelines using Python and SQL",
-      "Built executive dashboards in Power BI for strategic decision-making",
-      "Conducted risk and impact assessments for system enhancements",
-      "Documented system architecture, workflows, and continuity procedures",
+      "Designed and maintained end-to-end data processing and reporting systems using Python and SQL, managing data extraction, cleaning, transformation, validation, and delivery across organizational information systems",
+      "Built Power BI and Tableau dashboards to monitor KPIs, analyze program trends, and communicate performance insights clearly to executive stakeholders and non-technical audiences",
+      "Automated ETL workflows using Python and SQL scripting, reducing manual overhead and improving data consistency and accuracy across reporting pipelines",
+      "Collaborated with business teams to define KPIs, gather requirements, and iterate on data solutions aligned with organizational goals, applying strong analytical and stakeholder management skills",
     ],
     modalBg: "linear-gradient(135deg, rgba(20,83,45,0.9) 0%, rgba(15,23,42,0.95) 60%, rgba(168,85,247,0.15) 100%)",
     modalAccent: "#22c55e",
@@ -135,78 +152,82 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "AI Agent — Local Windows Coworker",
+    title: "BotNest — Multi-Tenant SaaS AI Platform",
     description:
-      "Privacy-first local AI agent powered by Ollama. Runs entirely on your machine — CLI interaction, offline LLM inference, and secure system automation. No data leaves your device.",
+      "Production-grade multi-tenant SaaS platform featuring a complete RAG pipeline with Voyage AI embeddings, pgvector semantic search, and streamed Claude API responses. Implements OAuth-compatible auth, Row Level Security, rate limiting, Stripe Connect billing, and CI/CD deployment with live monitoring.",
+    stack: ["React", "TypeScript", "Next.js 14", "Supabase", "pgvector", "Voyage AI", "Claude API", "RAG", "Stripe", "CI/CD"],
+    category: "AI/ML",
+    highlight: "SaaS Platform · 2026",
+  },
+  {
+    title: "OpenCare — Two-Sided Healthcare Marketplace",
+    description:
+      "Cloud-native healthcare marketplace built with Next.js 14 and Supabase, featuring Daily.co real-time video consultations and Stripe Connect payments. Independently owns system design, API contracts, security architecture, and cloud deployment for a regulated healthcare context requiring strict data integrity.",
+    stack: ["Next.js 14", "React", "TypeScript", "Supabase", "Daily.co", "Stripe Connect"],
+    category: "Full-Stack",
+    highlight: "Healthcare · 2026",
+  },
+  {
+    title: "WinAgent — Local Windows AI Automation Agent",
+    description:
+      "Production-ready AI agent leveraging LangGraph state machines for multi-step agentic reasoning, tool calling, and branching task execution entirely on-device. Evaluated multiple open-source LLMs via Ollama for performance trade-offs and applied MCP-style agent tool integration patterns for secure system automation.",
     stack: ["Python", "Ollama", "LangChain", "LangGraph", "Gradio", "Windows"],
     category: "AI/ML",
-    github: "https://github.com/winl2/AI-Agent-Local-Windows-Coworker",
-    highlight: "Featured Project",
+    github: "https://github.com/teerthamazumder/AI-Agent-Local-Windows-Coworker",
+    highlight: "Featured Project · 2025",
   },
   {
-    title: "Electronic Design Automation using LLM",
+    title: "Electronic Design Automation Using LLMs",
     description:
-      "AI-driven optimization models for electronic design workflows using LLaMA. Proof-of-concept with prompt engineering, performance evaluation, and feasibility analysis.",
-    stack: ["Python", "LLaMA", "PyTorch", "Hugging Face", "NLP", "Kali Linux"],
+      "MASc research project benchmarking AI-assisted EDA automation at Memorial University under Dr. Lihong Zhang. Designed Python-based data processing, orchestration, and evaluation pipelines using LLaMA, applying prompt engineering, RAG patterns, and performance testing with clear communication of findings to diverse technical audiences.",
+    stack: ["Python", "LLaMA", "PyTorch", "Hugging Face", "RAG", "NLP", "Prompt Engineering"],
     category: "AI/ML",
-    highlight: "MUN Research, 2024",
+    highlight: "MUN MASc Research · 2024",
   },
   {
-    title: "Web-Based Athlete Management System",
+    title: "Athlete Management & Real-Time Tracking System",
     description:
-      "Secure full-stack web application for athlete tracking and performance management with JWT authentication and REST API integration.",
+      "Full-stack web application for athlete performance tracking and management, built at Memorial University under Dr. Adrian Fiech. Features JWT authentication, role-based access control, RESTful APIs, and live data integration between React frontend and Node.js backend services.",
     stack: ["Node.js", "Express", "React", "REST APIs", "MySQL", "JWT", "Git"],
     category: "Full-Stack",
-    highlight: "MUN, 2024",
+    highlight: "MUN · 2024",
   },
   {
-    title: "Secure NAS Infrastructure Design",
+    title: "Cost-Optimized NAS & Linux Infrastructure",
     description:
-      "Linux-based network-attached storage with RAID, LVM, ACLs, and SSH hardening. Bash scripts for automation and monitoring. Full deployment documentation.",
+      "Designed and deployed a Linux-based NAS server with RAID, LVM, NFS/Samba shares, SSH hardening, ACLs, and Bash automation scripts for monitoring and storage management. Full deployment documentation and cost-optimization analysis included.",
     stack: ["Linux", "NFS", "Samba", "RAID", "LVM", "Bash", "Firewalld"],
     category: "Infrastructure",
-    highlight: "Enterprise Design",
+    highlight: "Infrastructure Design · 2020",
   },
   {
-    title: "Result Management System",
+    title: "Online Result Management System",
     description:
-      "Role-based academic result portal with secure data validation, grading business rules, and MySQL integration. Deployed for Bangladesh Polytechnic Institute.",
+      "BSc research project — role-based web platform for academic result publication developed for a national education board in Bangladesh. Features secure PHP backend with business-rule-driven grading logic, data validation, and a MySQL database, deployed for real institutional use.",
     stack: ["PHP", "MySQL", "HTML/CSS", "SQL"],
     category: "Full-Stack",
-    highlight: "Professional Project, 2019",
+    highlight: "BSc Research · 2019",
   },
   {
-    title: "Knowledge Graph from Twitter Data",
+    title: "Sentiment Analysis Engine & Knowledge Graph",
     description:
-      "Built a knowledge graph from Twitter microdata to analyze entity relationships and structured information using NetworkX.",
-    stack: ["Python", "Tweepy", "NetworkX", "JSON"],
-    category: "Data",
-  },
-  {
-    title: "Sentiment Analysis Engine",
-    description:
-      "Deep learning sentiment analysis model for text classification and opinion mining, built with TensorFlow/Keras and NLTK.",
-    stack: ["Python", "TensorFlow", "Keras", "NLTK"],
+      "Dual applied ML project combining a deep learning NLP sentiment classification model (TensorFlow/Keras/NLTK) with a Twitter-microdata knowledge graph for entity relationship analysis (NetworkX). Demonstrates end-to-end ML pipeline design, model evaluation, and data engineering.",
+    stack: ["Python", "TensorFlow", "Keras", "NLTK", "NetworkX", "Tweepy"],
     category: "AI/ML",
+    highlight: "DIU · 2018–2019",
   },
   {
-    title: "Voice-Activated Automated Car",
+    title: "E-Commerce Food Ordering System",
     description:
-      "Voice-controlled robotic car on Arduino with real-time obstacle detection and navigation using ultrasonic sensors.",
-    stack: ["Arduino", "Embedded C", "Speech Recognition API", "Ultrasonic Sensors"],
-    category: "Systems",
-  },
-  {
-    title: "E-Commerce Food Ordering App",
-    description:
-      "Android food ordering application with local SQLite database integration and clean user interface design.",
-    stack: ["Java", "Android Studio", "SQLite", "XML"],
+      "Android food ordering application with SQLite for product, customer, and order data management. Explored ASP.NET backend integration for order management and reporting, covering mobile app development, database design, and backend connectivity patterns.",
+    stack: ["Java", "Android Studio", "SQLite", "XML", "ASP.NET"],
     category: "Full-Stack",
+    highlight: "2021",
   },
   {
     title: "Data Link Layer Simulation",
     description:
-      "Java simulation demonstrating data transmission with error detection and flow control mechanisms.",
+      "Java simulation demonstrating reliable data transmission with error detection (CRC/checksum), flow control, and frame sequencing. Models core data-link layer protocols using OOP principles.",
     stack: ["Java", "OOP", "Network Protocol Simulation"],
     category: "Systems",
   },
@@ -214,27 +235,27 @@ export const projects: Project[] = [
 
 export const education = [
   {
-    degree: "Master of Applied Science",
+    degree: "Master of Applied Science (MASc)",
     field: "Software Engineering",
     institution: "Memorial University of Newfoundland",
     location: "St. John's, NL, Canada",
+    years: "2023 – 2024",
     icon: "🎓",
   },
   {
-    degree: "Bachelor of Science",
+    degree: "Bachelor of Science (BSc)",
     field: "Computer Science & Engineering",
     institution: "Daffodil International University",
     location: "Dhaka, Bangladesh",
+    years: "2016 – 2019",
     icon: "🎓",
   },
 ];
 
 export const certifications = [
-  { name: "CompTIA Security+ Training", issuer: "LinkedIn Learning" },
   { name: "Red Hat Certified System Administrator (RHCSA)", issuer: "Red Hat" },
-  { name: "Linux System Engineering & Security", issuer: "" },
-  { name: "Ansible Configuration Management", issuer: "" },
-  { name: "Linux Networking & Patch Management", issuer: "" },
+  { name: "Linux System Engineering & Security", issuer: "CompTIA CEU eligible" },
+  { name: "Learning Ansible Configuration Management", issuer: "" },
   { name: "Data Analyst & Development Certificate", issuer: "" },
   { name: "Excel Essential Training", issuer: "NASBA" },
   { name: "Emergency First Aid (CPR-B & CPR-C)", issuer: "" },
