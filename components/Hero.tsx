@@ -105,6 +105,7 @@ export default function Hero() {
             style={{
               color: "var(--accent)",
               textShadow: "0 0 40px rgba(0,229,192,0.4)",
+              fontFamily: "'Times New Roman', Times, serif",
             }}
           >
             {personal.name}

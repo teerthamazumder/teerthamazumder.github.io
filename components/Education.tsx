@@ -108,6 +108,11 @@ export default function Education({ id }: EducationProps) {
                       <MapPin size={11} />
                       {edu.location}
                     </p>
+                    {edu.years && (
+                      <p className="text-xs mt-1 font-semibold" style={{ color: "var(--accent)", opacity: 0.8 }}>
+                        {edu.years}
+                      </p>
+                    )}
                   </div>
                 </div>
               </div>

@@ -13,7 +13,7 @@ Read this file before every task. Do not deviate without explicit approval.
 | Title | Senior Infrastructure & Security Analyst · Software Engineer · AI/ML Developer |
 | Location | St. John's, Newfoundland & Labrador, Canada |
 | Email | mteertha@gmail.com |
-| GitHub | https://github.com/winl2 |
+| GitHub | https://github.com/teerthamazumder |
 | Photo | /public/teertha.jpg  ← replace placeholder once uploaded |
 
 > Do NOT include government email or phone number on the public site.
